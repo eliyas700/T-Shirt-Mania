@@ -1,8 +1,7 @@
 import React from "react";
 
-const TshirtItem = (props) => {
-  console.log(props);
-  const { name, price, picture } = props.tShirt;
+const TshirtItem = ({ tShirt, addToCart }) => {
+  const { name, price, picture } = tShirt;
   return (
     <div className="border-8 p-5 rounded-lg shadow-xl">
       <img className="h-[350px] mx-auto" src={picture} alt="" />
@@ -14,7 +13,10 @@ const TshirtItem = (props) => {
           $ {price}
         </small>{" "}
       </p>
-      <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+      <button
+        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+        onClick={() => addToCart(tShirt)}
+      >
         Add To Cart
       </button>
     </div>
