@@ -16,6 +16,10 @@ const Home = () => {
       alert("Dude,It's already in The Cart");
     }
   };
+  const removeFromCart = (id) => {
+    const restTShirts = cart.filter((tShirt) => tShirt._id !== id);
+    setCart(restTShirts);
+  };
   return (
     <div className="home-container grid grid-cols-[3fr,1fr]">
       <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 ml-7">
@@ -34,7 +38,11 @@ const Home = () => {
         <h3>Cart Details</h3>
         <p className="text-xl font-semibold ">Total Items:{cart.length}</p>
         {cart.map((tShirt) => (
-          <Cart key={tShirt._id} tShirt={tShirt}></Cart>
+          <Cart
+            key={tShirt._id}
+            removeFromCart={removeFromCart}
+            tShirt={tShirt}
+          ></Cart>
         ))}
       </div>
     </div>
