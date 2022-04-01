@@ -20,6 +20,19 @@ const Home = () => {
     const restTShirts = cart.filter((tShirt) => tShirt._id !== id);
     setCart(restTShirts);
   };
+  /* Conditional Rendering 
+  
+  */
+  //If else Condition
+  //   const cartLength = cart.length;
+  //   let command;
+  //   if (cartLength === 0) {
+  //     command = <p>Ki re beta Order Kor</p>;
+  //   } else if (cartLength == 1) {
+  //     command = <p>Ekta kinle Ki hoi naki re?</p>;
+  //   } else {
+  //     command = <p>Thanks For Shopping</p>;
+  //   }
   return (
     <div className="home-container grid grid-cols-[3fr,1fr]">
       <div className="grid md:grid-cols-3 sm:grid-cols-2 gap-10 ml-7">
@@ -44,6 +57,13 @@ const Home = () => {
             tShirt={tShirt}
           ></Cart>
         ))}
+        {/* Ternary Rendering
+        {cartLength === 3 ? <h2>3ta Kinli Matro?</h2> : <h2>Aaro Ken</h2>}
+        and Condition */}
+        {/* {cartLength === 4 && <h4>Eliyas 4 ta Kinco?</h4>}
+        Or Condtion
+        {cartLength === 0 || <h4>I am from or</h4>} */}
+        {/* <h2 className="text-orange-600">{command}</h2> */}
       </div>
     </div>
   );
